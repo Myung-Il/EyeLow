@@ -1,0 +1,81 @@
+/* 기본 설정 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* 전체 레이아웃 */
+.container {
+    max-width: 90%;
+    margin: 20px auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 헤더 */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 버튼 그룹 */
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn-small {
+    padding: 8px 12px;
+    margin: 0 5px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-small:hover {
+    background-color: #0056b3;
+}
+
+.search-bar {
+    padding: 8px;
+    font-size: 14px;
+    margin-left: 10px;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* 아이템 리스트 */
+.item-list {
+    width: 100%;
+    margin: 10px auto;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.item-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-row input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.item-title {
+    flex: 1; /* 제목은 체크박스와 함께 정렬 */
+    font-size: 16px;
+    color: #333;
+}

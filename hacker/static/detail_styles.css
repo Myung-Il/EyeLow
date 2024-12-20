@@ -1,0 +1,112 @@
+/* 기본 설정 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 컨테이너 */
+.container {
+    max-width: 800px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+}
+
+/* 제목 */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* 정보 섹션 */
+.info-section {
+    margin-bottom: 20px;
+}
+
+.info-section p {
+    margin: 10px 0;
+}
+
+.explanation {
+    font-style: italic;
+    color: #555;
+}
+
+/* 코드 섹션 */
+.code-section {
+    margin-bottom: 20px;
+}
+
+.code-block {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: Consolas, "Courier New", monospace;
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+
+/* 답변 섹션 */
+.answer-section {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+}
+
+/* 버튼 스타일 */
+.btn-submit {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #2980b9;
+}
+
+/* 성공 메시지 */
+.success-message {
+    color: #27ae60;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 링크 스타일 */
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}

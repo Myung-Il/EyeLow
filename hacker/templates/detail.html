@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글: {{ item['title'] }}</title>
+    <link href="{{ url_for('static', filename='detail_styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>게시글: {{ item['title'] }}</h1>
+
+        <div class="info-section">
+            <p><strong>출제자:</strong> {{ item['nickname'] }}</p>
+            <p><strong>설명:</strong></p>
+            <p class="explanation">{{ item['explanation'] }}</p>
+        </div>
+
+        <div class="code-section">
+            <p><strong>코드:</strong></p>
+            <pre class="code-block">{{ item['code'] }}</pre>
+        </div>
+
+        <div class="answer-section">
+            <form method="post" action="{{ url_for('check_answer', title=item['title']) }}">
+                <p><strong>출력 (정답란):</strong></p>
+                <textarea name="user_answer" rows="4" cols="50" placeholder="Enter your answer here"></textarea>
+                <br>
+                <button type="submit" class="btn-submit">등록하기</button>
+            </form>
+        </div>
+
+        <!-- 정답 확인 메시지 -->
+        {% if message %}
+        <p class="success-message">{{ message }}</p>
+        {% endif %}
+
+        <div class="back-link">
+            <a href="{{ url_for('review') }}">Back to Review</a>
+        </div>
+    </div>
+</body>
+</html>

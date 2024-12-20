@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>출력과 변수</title>
+    <style>
+        .variable { color: #6666ff; }  /* 변수명 색상 */
+        .operator { color: #ff9933; }  /* '>' 기호 색상 */
+        .command { color: #FFD700; }   /* 'print' 명령어 색상 */
+        .comment { color: #00CC00; }   /* 주석 색상 */
+        .number { color: #66B2FF; }    /* 숫자 색상 */
+        .string { color: #556B2F; }    /* 문자열 색상 변경 */
+    </style>
+</head>
+<body>
+    <h1>출력과 변수</h1>
+
+    <section>
+        <h2>print</h2>
+        <p>print는 파이썬에서 출력을 하는 데 사용되는 함수입니다</p>
+        <p>쉽게 말하면, 컴퓨터가 결과를 화면에 보여주게 하는 명령어라고 할 수 있습니다.</p>
+        <pre>
+<span class="operator">> </span><span class="command">print</span>(<span class="string">'Hello, world!'</span>)
+<span class="comment"># 결과: Hello, world!</span>
+        </pre>
+        <p>print는 여러 값을 한 번에 출력할 수도 있습니다</p>
+        <p>여러 값은 <strong>쉼표(,)</strong>로 구분합니다</p>
+        <pre>
+<span class="operator">> </span><span class="command">print</span>(<span class="string">"이름:"</span>, <span class="string">"홍길동"</span>)
+<span class="comment"># 결과: 이름: 홍길동</span>
+<span class="operator">> </span><span class="command">print</span>(<span class="string">"나이:"</span>, <span class="number">25</span>)
+<span class="comment"># 결과: 나이: 25</span>
+        </pre>
+    </section>
+
+    <section>
+        <h2>변수</h2>
+        <p>파이썬에서 변수는 값을 저장하는 공간입니다</p>
+        <p>print를 사용하면 변수에 저장된 값도 출력할 수 있습니다.</p>
+        <pre>
+<span class="operator">> </span><span class="variable">name</span> = <span class="string">"Alice"</span>
+<span class="operator">> </span><span class="variable">age</span> = <span class="number">30</span>
+<span class="operator">> </span><span class="command">print</span>(<span class="variable">name</span>, <span class="variable">age</span>)
+<span class="comment"># 결과: Alice 30</span>
+        </pre>
+        <p>응용</p>
+        <pre>
+<span class="operator">> </span><span class="variable">name</span> = <span class="string">"John"</span>
+<span class="operator">> </span><span class="variable">age</span> = <span class="number">25</span>
+<span class="operator">> </span><span class="command">print</span>(<span class="string">"이름:"</span>, <span class="variable">name</span>)
+<span class="comment"># 결과: 이름: John</span>
+<span class="operator">> </span><span class="command">print</span>(<span class="string">"나이:"</span>, <span class="variable">age</span>)
+<span class="comment"># 결과: 나이: 25</span>
+<span class="operator">> </span><span class="command">print</span>(<span class="string">"이름과 나이를 합쳐서:"</span>, <span class="variable">name</span>, <span class="variable">age</span>)
+<span class="comment"># 결과: 이름과 나이를 합쳐서: John 25</span>
+        </pre>
+    </section>
+</body>
+</html>

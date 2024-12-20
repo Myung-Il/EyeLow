@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제 목록</title>
+    <link href="{{ url_for('static', filename='review_styles.css') }}" rel="stylesheet">
+    <style>
+        /* Button group styling: Display buttons horizontally */
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;  /* Wrap buttons if needed */
+            gap: 10px;  /* Space between buttons */
+            margin-bottom: 20px;  /* Space below button group */
+        }
+
+        .button-group button,
+        .button-group input {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+
+        /* Item list styling: Display items vertically */
+        .item-list {
+            margin-top: 20px;
+        }
+
+        .item-row {
+            margin-bottom: 10px;  /* Space between items */
+        }
+
+        /* Add some spacing for better readability */
+        .container {
+            padding: 20px;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>문제 목록</h1>
+
+        <!-- Form for actions -->
+        <form method="POST" id="randomForm" class="button-group">
+            <!-- Buttons for actions -->
+            <div class="button-group">
+                <button type="button" id="select-all" class="btn-small">전체 선택</button>
+                <button type="submit" name="sort" class="btn-small">정렬</button>
+                <button type="submit" name="delete" class="btn-small" onclick="return confirmDelete()">삭제</button>
+                <button type="button" id="random-button" class="btn-small">랜덤 문제</button>
+                <input type="text" name="search" placeholder="Search..." class="search-bar">
+                <button type="submit" name="search" class="btn-small">검색</button>
+            </div>
+
+            <!-- Items List -->
+            <div class="item-list">
+                {% for item in items %}
+                <div class="item-row">
+                    <input type="checkbox" name="item[]" value="{{ item['title'] }}">
+                    <a href="{{ url_for('detail', title=item['title']) }}" class="item-title">{{ item['title'] }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Select All button logic
+        document.getElementById('select-all').addEventListener('click', function () {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const selectAllButton = document.getElementById('select-all');
+
+            // Select or deselect all checkboxes
+            const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+            
+            if (allChecked) {
+                checkboxes.forEach(function (checkbox) {
+                    checkbox.checked = false;
+                });
+                selectAllButton.textContent = "Select All";  // Change button text
+            } else {
+                checkboxes.forEach(function (checkbox) {
+                    checkbox.checked = true;
+                });
+                selectAllButton.textContent = "Deselect All";  // Change button text
+            }
+        });
+
+        // 랜덤 문제 버튼 로직
+        document.getElementById('random-button').addEventListener('click', function () {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkboxes.length === 0) {
+                alert("문제를 선택하세요!");
+                return;
+            }
+
+            // 랜덤으로 하나의 체크박스 선택
+            const randomIndex = Math.floor(Math.random() * checkboxes.length);
+            const randomValue = checkboxes[randomIndex].value;
+
+            // 랜덤 문제 상세 페이지로 이동
+            window.location.href = `/detail/${randomValue}`;
+        });
+
+        // Delete confirmation
+        function confirmDelete() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkboxes.length > 0) {
+                return confirm("선택한 문제를 삭제하시겠습니까?");
+            } else {
+                alert("삭제할 문제를 선택하세요!");
+                return false;
+            }
+        }
+    </script>
+</body>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+    <link href="{{ url_for('static', filename='tutorial_styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Tutorial</h1>
+        <ul class="tutorial-list">
+            <li>
+                <a href="{{ url_for('unit1') }}">Unit 1: 출력과 변수</a>
+            </li>
+            <li>
+                <a href="{{ url_for('unit2') }}">Unit 2: 기본 문법</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>출제</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='learn_styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid vh-100 d-flex flex-column">
+        <form method="POST" class="d-flex flex-column h-100">
+            <!-- Upper Section -->
+            <div class="upper-section d-flex flex-grow-1 mb-3">
+                <!-- Left Section -->
+                <div class="upper-left me-3">
+                    <!-- Title Input -->
+                    <div class="mb-3">
+                        <label for="title" class="form-label">제목</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Enter command">
+                    </div>
+                    <!-- Role Input -->
+                    <div class="mb-3">
+                        <label for="explanation" class="form-label">설명</label>
+                        <input type="text" class="form-control" id="explanation" name="explanation" placeholder="Enter explanation">
+                    </div>
+                </div>
+                <!-- Right Section -->
+                <div class="upper-right flex-grow-1">
+                    <!-- Code Input -->
+                    <label for="code" class="form-label">코드</label>
+                    <textarea class="form-control code-input" id="code" name="code" placeholder="Enter code"></textarea>
+                </div>
+            </div>
+
+            <!-- Lower Section -->
+            <div class="lower-section d-flex">
+                <!-- Output Section -->
+                <div class="output flex-grow-1 me-3">
+                    <textarea class="form-control output-input" id="output" name="output" placeholder="Enter expected output"></textarea>
+                </div>
+                <!-- Save Button -->
+                <div class="save d-flex align-items-start">
+                    <button type="submit" class="btn btn-primary w-100 save-button">저장</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

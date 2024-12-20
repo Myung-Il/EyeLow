@@ -1,0 +1,67 @@
+/* 전체 레이아웃 */
+.container-fluid {
+    padding: 1rem; /* 여백 설정 */
+    height: 100vh; /* 화면 전체 높이 */
+}
+
+/* 상단 레이아웃 */
+.upper-section {
+    display: flex;
+    width: 100%;
+    height: 80%; /* 상단 섹션의 높이를 크게 설정 */
+}
+
+/* 왼쪽 상단 섹션 스타일 */
+.upper-left {
+    width: 20%; /* 왼쪽 섹션 너비 */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* 오른쪽 상단 섹션 스타일 */
+.upper-right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%; /* 오른쪽 섹션 너비 */
+}
+
+/* 코드 입력란 스타일 */
+.code-input {
+    height: 100%;
+    resize: none; /* 크기 조절 불가능 */
+    overflow-y: auto; /* 세로 스크롤 추가 */
+    white-space: pre-wrap; /* 긴 텍스트 줄바꿈 */
+    font-family: monospace; /* 코드용 폰트 */
+    width: 100%; /* 코드 입력란의 너비를 오른쪽 레이아웃에 맞춤 */
+}
+
+/* 하단 레이아웃 */
+.lower-section {
+    display: flex;
+    width: 100%;
+    height: 15%; /* 하단 섹션 높이 */
+    gap: 1rem;
+}
+
+/* 출력란 스타일 */
+.output {
+    flex-grow: 1;
+}
+
+.output-input {
+    height: 100%;
+    resize: none; /* 크기 조절 불가능 */
+    overflow-y: auto; /* 스크롤 추가 */
+}
+
+/* 저장 버튼 스타일 */
+.save {
+    width: 10%; /* 버튼 섹션 너비 */
+}
+
+.save-button {
+    height: 100%; /* 세로로 꽉 채움 */
+    font-size: 1rem;
+}
